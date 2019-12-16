@@ -2,14 +2,14 @@
 
 namespace Entity\Employees;
 
-use Entity\Employee;
+use Entity\EmployeeAuthentication;
 
 /**
  * Entidade responsável pelo Diretor.
  *
  * @package Entity\Employees
  */
-class Manager extends Employee
+class Manager extends EmployeeAuthentication
 {
     /**
      * Manager constructor.
@@ -17,19 +17,14 @@ class Manager extends Employee
      * @param $name
      * @param $cpf
      */
-    public function __construct($name, $cpf)
+    public function __construct($name, $cpf, $salary)
     {
-        parent::__construct($name, $cpf);
+        parent::__construct($name, $cpf, $salary);
     }
 
-    /**
-     * Altera o CPF.
-     *
-     * @param $cpf
-     */
-    public function updateCpf($cpf)
+    public function salaryIncrease()
     {
-        $this->cpf = $cpf;
+        return $this->salary *= 1.7;
     }
 
     public static function hello()

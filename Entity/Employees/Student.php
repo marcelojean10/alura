@@ -17,11 +17,20 @@ class Student extends Employee
      * @param $name
      * @param $cpf
      */
-    public function __construct($name, $cpf)
+    public function __construct($name, $cpf, $salary)
     {
-        parent::__construct($name, $cpf);
+        parent::__construct($name, $cpf, $salary);
     }
 
+    /**
+     * Conceder bonificação de 50% do salário.
+     *
+     * @return float
+     */
+    public function setBonus()
+    {
+        return $this->salary * 0.2;
+    }
 
     public static function hello()
     {
